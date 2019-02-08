@@ -1,7 +1,7 @@
 # Rblang
 
 ## R package to interface with blang CLI
-The package is currently in a fairly rudimentary stage, and only supports certain functions. For the time being it allows you to run a blang model through R and return the results as an R dataframe.
+The package is currently in a fairly rudimentary stage, and only supports certain functions. For the time being it allows you to run a blang model through R and return the results as an R dataframe. The functions will only work where the blang CLI command works. As such it is not possible to run models within blangSDK and blangExample. Additionally, it assumes that the project folder is within the same directory as blangSDK.
 
 ## Usage:
 1. Load the library in R and define a blangModel. The only required arguments are ```project.path``` and ```model.name``` and there are options to specify other attributes. You can refer to help pages by searching for ```Rblang::functionName``` in the help tab:
