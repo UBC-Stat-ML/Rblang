@@ -2,7 +2,7 @@
 % Please edit documentation in R/blangModel.R
 \name{blangModel}
 \alias{blangModel}
-\title{Runs a given blang Model}
+\title{Sets up a blang Model}
 \usage{
 blangModel(project.path = "", model.name = "", data = NULL,
   blang.args = paste("--model", model.name, sep = " "), out.loc = NULL,
@@ -23,9 +23,6 @@ blangModel(project.path = "", model.name = "", data = NULL,
 GlobalDataSource param in the blang model if known, otherwise
 uses the name of the data param to pass into blang.}
 }
-\value{
---
-}
 \description{
-Runs a given blang Model
+Sets up a blang Model
 }

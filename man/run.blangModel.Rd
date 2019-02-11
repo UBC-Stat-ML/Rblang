@@ -14,6 +14,12 @@ arguments provided to it via obj$blang.args}
 the default blangModel$blang.args for this run. If NULL,
 it will just use blangModel$blang.args.}
 }
+\value{
+returns a blangModel object with this runs results
+    path and arguments. After a run is complete, the list of
+    sampled variables can be accessed via modelName$samples
+    and the temperatures via modelName$temps.
+}
 \description{
 Given the name of a blang model (name of .bl file), run
 the model with no additional arguments.

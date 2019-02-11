@@ -9,7 +9,7 @@
 #' @return dataframe of the samples for the given random variable
 #' @export
 getResult.blangModel <- function(obj, variable, output.path=NULL) {
-  obj$results.path <- paste(obj$project.path, "/results/latest", sep = "")
+  #obj$results.path <- paste(obj$project.path, "/results/latest", sep = "")
   resfile <- obj$results.path
   path <- paste(resfile, "/samples/", variable, ".csv", sep = "")
   result <- read.csv(path, header = TRUE, sep = ",")
@@ -18,15 +18,5 @@ getResult.blangModel <- function(obj, variable, output.path=NULL) {
   if (!is.null(output.path)) {
     system2("cp", args = c("-v", resfile, obj$out.loc))
   }
-
-  append(obj$rvars, variable)
   return(result)
 }
-  # if (variable == '') {
-  #   resfile = paste(obj$project.path, "/results/latest/samples/",
-  #                   obj$var.name, ".csv", sep = "")
-  # }
-  # else if (variable != '') {
-  #   resfile = paste(obj$project.path, "/results/latest/samples/",
-  #                   variable, ".csv", sep = "")
-  # }

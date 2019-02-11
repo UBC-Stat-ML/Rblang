@@ -1,4 +1,4 @@
-#' Runs a given blang Model
+#' Sets up a blang Model
 #'
 #'
 #' @param project.path filepath to the blang project root directory
@@ -9,7 +9,6 @@
 #' @param data.name optional string argument, set to the name of the
 #'     GlobalDataSource param in the blang model if known, otherwise
 #'     uses the name of the data param to pass into blang.
-#' @return --
 #' @export
 blangModel <- function(project.path = '', model.name = '', data = NULL,
                        blang.args = paste('--model', model.name, sep=" "),
@@ -33,8 +32,7 @@ blangModel <- function(project.path = '', model.name = '', data = NULL,
 
   modelargs <- list(project.path = project.path, model.name = model.name,
                     data = data, blang.args = blang.args,out.loc = out.loc,
-                    data.name = data.name, results.path = '', rvars = c())
+                    data.name = data.name, results.path = '', samples = NULL, temps = NULL)
   attr(modelargs, "class") <- "blangModel"
   modelargs
-  #runModel(project.path, model.name, blang.args, var.name, out.loc)
 }
