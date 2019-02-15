@@ -11,11 +11,12 @@
 #'     uses the name of the data param to pass into blang.
 #' @export
 blangModel <- function(project.path = '', model.name = '', data = NULL,
-                       blang.args = paste('--model', model.name, sep=" "),
+                       blang.args = NULL,
                        out.loc = NULL, data.name = NULL) {
   cur.dir = getwd()
   #setwd(project.path)
 
+  blang.args <- paste("--model", model.name, sep=" ", blang.args)
   # Currently names the csv file passed into blang based on the variable
   # name of the dataframe passed in. Could change to be more robust.
   #

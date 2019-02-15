@@ -5,8 +5,7 @@
 \title{Sets up a blang Model}
 \usage{
 blangModel(project.path = "", model.name = "", data = NULL,
-  blang.args = paste("--model", model.name, sep = " "), out.loc = NULL,
-  data.name = NULL)
+  blang.args = NULL, out.loc = NULL, data.name = NULL)
 }
 \arguments{
 \item{project.path}{filepath to the blang project root directory}
