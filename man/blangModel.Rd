@@ -4,23 +4,28 @@
 \alias{blangModel}
 \title{Sets up a blang Model}
 \usage{
-blangModel(project.path = "", model.name = "", data = NULL,
-  blang.args = NULL, out.loc = NULL, data.name = NULL)
+blangModel(project.path = "", model.name = "", blang.args = NULL,
+  data = NULL, data.name = NULL, out.loc = FALSE,
+  post.processor = FALSE)
 }
 \arguments{
 \item{project.path}{filepath to the blang project root directory}
 
-\item{model.name}{the name of the model to be run, as a string}
-
-\item{data}{a dataframe the data passed into the model}
+\item{model.name}{the name of the model to be run}
 
 \item{blang.args}{a string of the runtime arguments to be used by blang}
 
-\item{out.loc}{optional parameter to set the filepath of model result files}
+\item{data}{a dataframe to be passed into the model}
 
 \item{data.name}{optional string argument, set to the name of the
 GlobalDataSource param in the blang model if known, otherwise
 uses the name of the data param to pass into blang.}
+
+\item{out.loc}{set to TRUE to output results in current working
+directory instead of Blang project directory.}
+
+\item{post.process}{Sets post-processing option. FALSE by default,
+if TRUE, uses Blang's DefaultPostProcessor.}
 }
 \description{
 Sets up a blang Model
