@@ -16,10 +16,11 @@
 run.blangModel <- function(obj, run.args = NULL) {
   curdir = getwd()
   setwd(obj$project.path)
-  blang = sub("[^/]+$", "blangSDK/build/install/blang/bin/blang", obj$project.path)
+
+  # blang = sub("[^/]+$", "blangSDK/build/install/blang/bin/blang", obj$project.path)
 
   if(is.null(run.args)) { run.args <- obj$blang.args }
-  system2(command = blang, args = run.args)
+  system2(command = 'blang', args = run.args)
 
   obj$results.path <- paste(obj$project.path,
                             "/results/",

@@ -10,6 +10,7 @@
 #' @export
 getResult.blangModel <- function(obj, variable, output.path=NULL) {
   #obj$results.path <- paste(obj$project.path, "/results/latest", sep = "")
+
   resfile <- obj$results.path
   path <- paste(resfile, "/samples/", variable, ".csv", sep = "")
   result <- read.csv(path, header = TRUE, sep = ",")

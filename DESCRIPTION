@@ -11,3 +11,10 @@ License: N/A
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
+Collate: 
+    'blangModel.R'
+    'getResult.R'
+    'installSDK.R'
+    'runModel.R'
+    'setup.R'
+    'zzz.R'
