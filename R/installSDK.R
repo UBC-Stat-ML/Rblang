@@ -20,8 +20,7 @@ installSDK <- function(olddir, instPath) {
   setwd(paste(instPath, "/blangSDK-master/",sep = ""))
   system("chmod +x * setup-cli.sh")
 
-  system(paste(instPath, "/blangSDK-master/setup-cli.sh",sep = ""))
-
+  system(paste("source ", instPath, "/blangSDK-master/setup-cli.sh",sep = ""))
   setwd(olddir)
 }
 
