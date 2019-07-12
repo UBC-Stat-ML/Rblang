@@ -15,8 +15,9 @@ getResult.blangModel <- function(obj, variable, output.path=NULL) {
   path <- paste(resfile, "/samples/", variable, ".csv", sep = "")
   result <- read.csv(path, header = TRUE, sep = ",")
 
-  if (is.null(output.path)) {output.path <- obj$out.loc}
+  #if (is.null(output.path)) {output.path <- obj$out.loc}
   if (!is.null(output.path)) {
+    obj$out.loc <- output.path
     system2("cp", args = c("-v", resfile, obj$out.loc))
   }
   return(result)
