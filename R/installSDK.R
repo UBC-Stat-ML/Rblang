@@ -26,14 +26,14 @@ installSDK <- function(olddir, instPath) {
   download.file("https://github.com/UBC-Stat-ML/blangSDK/archive/master.zip"
                 , destfile = paste(instPath,"blangSDK-master.zip",sep = "/"))
 
-  unzip(zipfile = paste(instPath,"blangSDK-master.zip",sep = "/"), exdir = sdkPath)
+  unzip(zipfile = paste(instPath,"blangSDK-master.zip",sep = "/"), exdir = instPath)
 
   #system(paste("cd ", instPath, "/blangSDK-master/", sep = ""))
   #Sys.chmod(paste(instPath, "/blangSDK-master/setup-cli.sh",sep = ""), "777")
   #system(paste("source ", instPath, "/set-permission.sh", sep=""))
   #system(paste("chmod +x * ", sdkPath, "/setup-cli.sh", sep=""))
   #setwd(sdkPath)
-  system(paste("cd ", sdkPath, " && ",
+  system(paste("cd ", sdkPath, "/ && ",
                "chmod +x * setup-cli.sh && ",
                paste("source ", instPath, "/blangSDK-master/setup-cli.sh &&", sep = ""),
                paste("cd ", olddir, sep=""),
