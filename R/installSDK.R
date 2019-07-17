@@ -28,10 +28,10 @@ installSDK <- function(olddir, instPath) {
 
   system(paste("cd ", sdkPath, "/ && ",
                "chmod +x * setup-cli.sh && ",
-               #paste("source ", instPath, "/blangSDK-master/setup-cli.sh &&", sep = ""),
-               paste("source setup-cli.sh && ",sep=""),
+               paste("source ", instPath, "/blangSDK-master/setup-cli.sh &&", sep = ""),
+               #paste("source setup-cli.sh && ",sep=""),
                paste("cd ", olddir, sep=""),
-               sep = ""))
+               sep = ""), wait = TRUE)
 }
 
 #' Checks for existence of blangSDK Command Line Interface files
