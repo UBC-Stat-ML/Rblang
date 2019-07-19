@@ -28,6 +28,9 @@ run.blangModel <- function(obj, run.args = NULL) {
                             sep = "")
   obj$blang.args <- run.args
   obj$samples <- list.files(paste(obj$results.path, "/samples/", sep=""))
+  if(obj$post.processor) {
+    obj$ess <- read.csv(paste(obj$results.path, "/ess/allEss.csv", sep=""), header = TRUE, sep = ",")
+  }
   #obj$temps <- read.csv(paste(obj$results.path, "/monitoring/temperatures.csv", sep=""), header = TRUE, sep = ",")
 
   setwd(curdir)

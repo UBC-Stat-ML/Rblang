@@ -34,10 +34,12 @@ blangModel <- function(project.path = '', model.name = '',
     write.csv(data, file = filename, sep = ",")
     blang.args = paste(blang.args, paste("--", as.character(data)), filename, sep = " ")
   }
+  if (post.processor) { blang.args <- paste(blang.args, " --postProcessor DefaultPostProcessor") }
 
   modelargs <- list(project.path = project.path, model.name = model.name,
                     data = data, blang.args = blang.args, out.loc = out.loc,
-                    data.name = data.name, results.path = '', samples = NULL, temps = NULL)
+                    data.name = data.name, results.path = '',
+                    post.processor = post.processor, samples = NULL, temps = NULL)
   attr(modelargs, "class") <- "blangModel"
   modelargs
 }
